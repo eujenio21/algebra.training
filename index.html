@@ -205,18 +205,32 @@
     Get Started Today
   </a>
 
- <!-- VIDEO SECTION -->
-<section class="video-section">
-  <div class="video-container">
-    <iframe 
-      src="https://www.youtube.com/embed/XTJwYHe_0Yc"
-      title="Product Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
+<style>
+.video-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  background: #000;
+}
+</style>
+
+<div class="video-wrapper">
+  <video
+    controls
+    autoplay
+    muted
+    playsinline
+    preload="metadata">
+    <source src="https://player.cloudinary.com/embed/?cloud_name=dz2yxbf7q&public_id=V%C3%ADdeo_sem_t%C3%ADtulo_Feito_com_o_Clipchamp_2_tidfyw&profile=cld-default" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 
 </section>
@@ -370,6 +384,7 @@
 
 </body>
 </html>
+
 
 
 
