@@ -23,14 +23,29 @@
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
 
-    .video-wrapper {
-  max-width: 860px;
-  margin: 40px auto 0;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 14px 34px rgba(0,0,0,.15);
-  background: #000;
+    .video-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
 .video-wrapper video {
   width: 100%;
@@ -190,12 +205,19 @@
     Get Started Today
   </a>
 
-  <div class="https://youtu.be/XTJwYHe_0Yc">
-  <video controls preload="metadata" poster="video-cover.jpg">
-    <source src="algeprime-intro.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+ <!-- VIDEO SECTION -->
+<section class="video-section">
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/SEU_ID_AQUI?rel=0&modestbranding=1"
+      title="Product Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
 
 </section>
 
@@ -348,4 +370,5 @@
 
 </body>
 </html>
+
 
