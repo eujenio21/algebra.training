@@ -190,21 +190,11 @@
   </a>
 
 
-<div style="max-width:900px;margin:40px auto;border-radius:16px;overflow:hidden;">
-  <video
-    controls
-    muted
-    playsinline
-    preload="metadata"
-    style="width:100%;background:#000;">
-    <source
-      src="https://res.cloudinary.com/dz2yxbf7q/video/upload/f_mp4,vc_h264/https://player.cloudinary.com/embed/?cloud_name=dz2yxbf7q&public_id=V%C3%ADdeo_sem_t%C3%ADtulo_Feito_com_o_Clipchamp_2_tidfyw&profile=cld-default.mp4"
-      type="video/mp4">
-    Seu navegador não suporta vídeo HTML5.
-  </video>
-</div>
-
-
+const player = cloudinary.player('player', {
+  cloudName: 'dz2yxbf7q',
+  publicId: 'Vídeo_sem_título_Feito_com_o_Clipchamp_2_tidfyw',
+  profile: 'cld-default'
+});
 
 </section>
 
@@ -357,6 +347,7 @@
 
 </body>
 </html>
+
 
 
 
