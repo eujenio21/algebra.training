@@ -2,398 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AlgePrime – Learn Algebra From Zero With Clarity and Confidence
-</title>
-
-  <meta name="description" content="A clear, guided algebra learning experience with real-world relevance.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17775420534">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17775420534');
-</script>
-
-  <!-- Event snippet for Click Buy Now conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17775420534/CWjzCMzXq9cbEPbI_ZtC',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>algeprime</title>
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
-
-
-.video-wrapper {
-  max-width: 900px;
-  margin: 40px auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
-.video-wrapper video {
-  width: 100%;
-  display: block;
-  background: #000;
-}
-
-
-    .stars {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #f4b400;
-}
-
-    body {
-      background:#d9e6e3;
-      color:#000;
-      line-height:1.6;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* HEADER */
-    header {
-      background:linear-gradient(135deg,#0b1f2d,#123347);
-      color:#fff;
-      padding:24px;
-      font-size:26px;
-      font-weight:700;
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
     }
 
-    /* HERO BANNER */
-    .hero {
-      text-align:center;
-      padding:90px 20px 70px;
-      max-width:950px;
-      margin:auto;
+    /* Fundo geral */
+    .page {
+      width: 100%;
+      height: 100vh;
+      background-image: url("wallpaper-desktop.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
     }
 
-    .hero h1 {
-      font-size:40px;
-      margin-bottom:18px;
+    /* Banner / Aviso */
+    .notice {
+      max-width: 480px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .hero p {
-      font-size:19px;
-      color:#3f3f3f;
-      margin-bottom:30px;
+    .notice img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
-    .cta-btn {
-      display:inline-block;
-      background:linear-gradient(135deg,#0b1f2d,#123347);
-      color:#fff;
-      padding:16px 42px;
-      font-size:18px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-      transition:.2s;
+    .notice:hover {
+      transform: scale(1.05);
     }
 
-    .cta-btn:hover { transform:translateY(-3px); }
+    /* Fundo para celular */
+    @media (max-width: 768px) {
+      .page {
+        background-image: url("wallpaper-mobile.jpg");
+        padding-top: 20px;
+      }
 
-    /* SECTION */
-    .section {
-      max-width:1100px;
-      margin:60px auto;
-      padding:0 20px;
-    }
-
-    .section h2 {
-      text-align:center;
-      font-size:32px;
-      margin-bottom:25px;
-    }
-
-    .section p.center {
-      text-align:center;
-      max-width:850px;
-      margin:0 auto 40px;
-      color:#4a4a4a;
-      font-size:17px;
-    }
-
-    /* CARDS */
-    .cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:25px;
-    }
-
-    .card {
-      background:#fff;
-      border-radius:14px;
-      padding:30px 25px;
-      box-shadow:0 12px 30px rgba(0,0,0,.08);
-      text-align:center;
-    }
-
-    .card h3 {
-      font-size:20px;
-      margin-bottom:12px;
-    }
-
-    .card p {
-      font-size:15px;
-      color:#4a4a4a;
-    }
-
-    /* GUARANTEE */
-    .guarantee {
-      background:#ffffff;
-      border-radius:14px;
-      padding:40px 30px;
-      max-width:900px;
-      margin:60px auto;
-      text-align:center;
-      box-shadow:0 12px 30px rgba(0,0,0,.08);
-    }
-
-    .guarantee h3 {
-      font-size:26px;
-      margin-bottom:15px;
-    }
-
-    .guarantee p {
-      color:#4a4a4a;
-      font-size:16px;
-    }
-
-    /* FOOTER */
-    footer {
-      background:#ffffff;
-      text-align:center;
-      padding:25px;
-      font-size:14px;
-      color:#4a4a4a;
-      margin-top:50px;
+      .notice {
+        max-width: 440px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>AlgePrime</header>
-
-<!-- HERO / COPY PRINCIPAL -->
-<section class="hero">
-  <h1>Master algebra with clarity and confidence.</h1>
-  <p>
-    A structured and guided algebra learning experience designed to help you
-    truly understand concepts — not just memorize formulas.
-  </p>
-  <a href="https://algeprime.com#aff=Epifanio01"
-     class="cta-btn"
-     target="_blank"
-     onclick="gtag('event','conversion',{'send_to':'AW-17775420534'});">
-    Get Started Today
-  </a>
-
-
-<div style="max-width:900px;margin:40px auto;border-radius:16px;overflow:hidden;">
-  <video
-    controls
-    playsinline
-    preload="metadata"
-    poster="capa-video.jpg"
-    style="width:100%;background:#000;border-radius:16px;">
-    
-    <source
-      src="https://res.cloudinary.com/dz2yxbf7q/video/upload/v1767907510/V%C3%ADdeo_sem_t%C3%ADtulo_Feito_com_o_Clipchamp_2_tidfyw.mp4"
-      type="video/mp4">
-
-    Seu navegador não suporta vídeo HTML5.
-  </video>
-</div>
-
-
-</section>
-
-<!-- WHY -->
-<section class="section">
-  <h2>Why Explore Algebra With AlgePrime?</h2>
-  <p class="center">
-    AlgePrime was created to make algebra clear, accessible, and relevant.
-    Each lesson builds confidence through logic, structure, and real-life context.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Clear & Guided Learning</h3>
-      <p>
-        Follow a carefully organized learning path where each lesson builds on
-        the previous one for lasting understanding.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Real-World Relevance</h3>
-      <p>
-        Discover how algebra applies to everyday decisions, from finance to
-        technology and problem-solving.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Designed for All Levels</h3>
-      <p>
-        Whether you are starting from scratch or reinforcing your knowledge,
-        the content adapts to your pace.
-      </p>
-    </div>
+  <div class="page">
+    <!-- Imagem clicável -->
+    <a class="notice" 
+       href="https://algeprime.com#aff=Epifanio01" 
+       target="_blank">
+      <img src="aviso.png" alt="Notice">
+    </a>
   </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section">
-  <h2>How It Works</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Step-by-Step Videos</h3>
-      <p>
-        Watch clear lessons that explain each concept in a simple and logical way.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Practice & Understanding</h3>
-      <p>
-        Reinforce learning through structured explanations and practical examples.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Progress at Your Pace</h3>
-      <p>
-        Learn on your own schedule with content designed for steady progress.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- GUARANTEE -->
-<section class="guarantee">
-  <h3>Risk-Free Learning Experience</h3>
-  <p>
-    The program includes a satisfaction guarantee, allowing you to explore the
-    content with confidence and peace of mind.
-  </p>
-</section>
-
-
-<!-- AVALIAÇÕES -->
-<section class="section">
-  <h2>What Students Are Saying</h2>
-  <p class="center">
-    Average rating: <strong>5.0 out of 6 stars</strong> based on student feedback
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="stars">★★★★★★</div>
-      <h3>Michael R.</h3>
-      <p>
-        I really liked the course. Everything is explained clearly and step by step.
-        Algebra finally makes sense to me.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="stars">★★★★☆☆</div>
-      <h3>Sarah L.</h3>
-      <p>
-        Very didactic and easy to follow. I learned many things that I never
-        understood before.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="stars">★★★★★☆</div>
-      <h3>Daniel K.</h3>
-      <p>
-        The explanations are simple and logical. I’m really enjoying the course
-        and making real progress.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="stars">★★★★★☆</div>
-      <h3>Emily T.</h3>
-      <p>
-        This is the most didactic algebra course I’ve ever tried. Clear examples
-        and no confusion.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="stars">★★★★☆☆</div>
-      <h3>Robert M.</h3>
-      <p>
-        I’ve learned so much already. The structure makes everything easier to
-        understand.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-
-<!-- FINAL CTA -->
-<section class="hero">
-  <h1>Start Your Algebra Journey Today</h1>
-  <a href="https://algeprime.com#aff=Epifanio01"
-     class="cta-btn"
-     target="_blank"
-     onclick="gtag('event','conversion',{'send_to':'AW-17775420534'});">
-    Access AlgePrime Now
-  </a>
-</section>
-
-<footer>
-  © 2025 AlgePrime | Educational Content Only
-</footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
